@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot name="first">
+<link name="base">
+ <visual>
+   <material name="white">
+     <color rgba="1 1 1 1"/>
+     </material>
+   <geometry>
+     <sphere radius="0.05"/>
+       </geometry>
+   </visual>
+</link>
+<link name="r1">
+<visual>
+  <material name="blue">
+     <color rgba="0 0 1 1"/>
+     </material>
+  <geometry>
+    <cylinder length="0.3" radius="0.025"/>
+    </geometry>
+  <origin xyz="0.19 0 0" rpy="0 1.57 0"/>
+    
+  </visual>
+
+</link>
+<joint name="r1_to_c1" type="revolute">
+<parent link="c1"/>
+<child link="r1"/>
+<axis xyz="0 0 1.57"/>
+  <limit effort="1000" velocity="0.05"/>
+</joint>
+<link name="c2">
+<visual>
+  <material name="black">
+    <color rgba="1 1 1 1"/>
+      </material>
+    <geometry>
+      <sphere radius="0.05"/>
+    </geometry>
+    <origin xyz="0.37 0 0"/>
+    </visual>
+  </link>
+<joint name="r1_to_c2" type="fixed">
+<parent link="r1"/>
+  <child link="c2"/>
+  <axis xyz="0 0 1.57"/>
+</joint>
+<link name="r2">
+<visual>
+  <material name="blue">
+     <color rgba="0 0 1 1"/>
+     </material>
+  <geometry>
+    <cylinder length="0.3" radius="0.025"/>
+    </geometry>
+  <origin xyz="0.12 0 0" rpy="0 1.57 0"/>
+    
+  </visual>
+
+</link>
+<joint name="r2_to_c2" type="revolute">
+<parent link="c2"/>
+  <child link="r2"/>
+  <axis xyz="0 0 1.57"/>
+  <origin xyz="0.425 0 0"/>
+  <limit effort="1000" velocity="0.05"/>
+ 
+</joint>
+
+    
+    
+
+</robot>
