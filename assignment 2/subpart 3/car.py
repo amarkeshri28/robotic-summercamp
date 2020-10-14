@@ -19,7 +19,7 @@ maxForce = 100 #Newton
 #p.applyExternalForce(car,3,[100,0,0],)
 rkey=ord('r')
 qKey = ord('a')
-z=[0,0,0.5]
+z=[0,0,0.05]
 
 while (1):
     
